@@ -1,0 +1,75 @@
+{
+    "name": "parfaitementweb/laravel-localized-routes",
+    "description": "A convenient way to set up, manage and use localized routes in a Laravel app.",
+    "keywords": [
+        "php",
+        "laravel",
+        "localization",
+        "locale",
+        "language",
+        "country",
+        "routes",
+        "routing",
+        "translation"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ivan Vermeyen",
+            "email": "ivan@codezero.be"
+        },
+        {
+            "name": "Alexis Serneels",
+            "email": "alexis@parfaitementweb.com"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "codezero/browser-locale": "^3.0",
+        "codezero/composer-preload-files": "^1.0",
+        "parfaitementweb/laravel-uri-translator": "^3.0",
+        "codezero/php-url-builder": "^1.0",
+        "illuminate/support": "^12.0|^13.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.6",
+        "orchestra/testbench": "^10.0|^11.0",
+        "phpunit/phpunit": "^11.0|^12.0"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeZero\\LocalizedRoutes\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CodeZero\\LocalizedRoutes\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CodeZero\\LocalizedRoutes\\LocalizedRoutesServiceProvider"
+            ],
+            "aliases": {
+                "LocaleConfig": "CodeZero\\LocalizedRoutes\\Facades\\LocaleConfig"
+            }
+        },
+        "preload-files": [
+            "src/helpers.php"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "codezero/composer-preload-files": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
