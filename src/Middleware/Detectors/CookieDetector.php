@@ -16,6 +16,12 @@ class CookieDetector implements Detector
     {
         $key = Config::get('localized-routes.cookie_name');
 
+        // Laravel encrypts cookies by default. When the locale cookie is set
+        // outside of Laravel's encryption (e.g. client-side), read it raw.
+        if (Config::get('localized-routes.check_raw_cookie')) {
+            return $_COOKIE[$key] ?? null;
+        }
+
         return Cookie::get($key);
     }
 }

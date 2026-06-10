@@ -72,6 +72,13 @@ return [
     'cookie_minutes' => 60 * 24 * 365, // 1 year
 
     /**
+     * Read the locale cookie directly from $_COOKIE instead of through
+     * Laravel's Cookie facade, which decrypts cookies by default.
+     * Enable this when the cookie is set unencrypted (e.g. client-side).
+     */
+    'check_raw_cookie' => false,
+
+    /**
      * The detectors to use to find a matching locale.
      * These will be executed in the order that they are added to the array!
      */
